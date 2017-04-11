@@ -10,6 +10,14 @@ describe("Airport", function() {
       expect(airport.planes()).toEqual([]);
     });
   });
+  describe('capacity', function() {
+    it('default capacity', function() {
+      expect(airport.capacity()).toEqual(10);
+    });
+    it('specified capacity', function() {
+      expect(airport.capacity(20)).toEqual(20);
+    });
+  });
 })
 
 // require 'airport'

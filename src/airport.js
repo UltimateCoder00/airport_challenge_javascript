@@ -1,7 +1,19 @@
 function Airport() {
+
+  var defaultCapacity = 10;
+
   Airport.prototype.planes = function() {
     return [];
   }
+
+  Airport.prototype.capacity = function(number) {
+    if (number == null) {
+      return defaultCapacity;
+    } else {
+      return number;
+    }
+  }
+
 }
 
 // class Airport
