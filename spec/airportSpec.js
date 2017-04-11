@@ -5,6 +5,7 @@ describe("Airport", function() {
     airport = new Airport();
     airport20 = new Airport(20);
     plane = new Plane();
+    fakePlane = jasmine.createSpyObj('plane',['land', 'takeOff']);
   })
 
   describe('atributes of airport', function() {
@@ -27,13 +28,22 @@ describe("Airport", function() {
       airport.accept(plane)
       expect(airport._planes).toEqual([plane]);
     });
+    it('fake plane is landed', function() {
+      airport.accept(fakePlane);
+      expect(fakePlane.land).toHaveBeenCalled();
+    });
   });
 
   describe('release plane', function() {
-    it('accepts landing plane', function() {
+    it('releases plane from store', function() {
       airport.accept(plane);
       airport.release(plane);
       expect(airport._planes).toEqual([]);
+    });
+    it('calls takeoff on plane', function() {
+      airport.accept(fakePlane);
+      airport.release(fakePlane);
+      expect(fakePlane.takeOff).toHaveBeenCalled();
     });
   });
 
