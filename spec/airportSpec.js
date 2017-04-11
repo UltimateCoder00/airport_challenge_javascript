@@ -29,6 +29,14 @@ describe("Airport", function() {
     });
   });
 
+  describe('release plane', function() {
+    it('accepts landing plane', function() {
+      airport.accept(plane);
+      airport.release(plane);
+      expect(airport._planes).toEqual([]);
+    });
+  });
+
 })
 
 // require 'airport'

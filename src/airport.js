@@ -13,7 +13,13 @@ function Airport(capacity) {
 }
 
 Airport.prototype.accept = function(plane) {
+  plane.land();
   this._planes.push(plane);
+}
+
+Airport.prototype.release = function(plane) {
+  plane.takeOff();
+  this._planes.pop();
 }
 
 // class Airport
