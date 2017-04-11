@@ -4,6 +4,7 @@ describe("Airport", function() {
   beforeEach(function() {
     airport = new Airport();
     airport20 = new Airport(20);
+    plane = new Plane();
   })
 
   describe('atributes of airport', function() {
@@ -11,6 +12,7 @@ describe("Airport", function() {
       expect(airport._planes).toEqual([]);
     });
   });
+
   describe('capacity', function() {
     it('default capacity', function() {
       expect(airport._capacity).toEqual(10);
@@ -19,6 +21,14 @@ describe("Airport", function() {
       expect(airport20._capacity).toEqual(20);
     });
   });
+
+  describe('landing a plane', function() {
+    it('plane lands', function() {
+      airport.accept(plane)
+      expect(airport._planes).toEqual([plane]);
+    });
+  });
+
 })
 
 // require 'airport'

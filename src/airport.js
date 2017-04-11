@@ -12,6 +12,10 @@ function Airport(capacity) {
 
 }
 
+Airport.prototype.accept = function(plane) {
+  this._planes.push(plane);
+}
+
 // class Airport
 //   attr_reader :capacity, :weather
 //   DEFAULT_CAPACITY = 10
