@@ -1,3 +1,13 @@
+'use strict';
+
+function Plane() {
+  this._landed = true;
+}
+
+Plane.prototype.takeOff = function() {
+  this._landed = false;
+}
+
 // class Planes
 //   attr_reader :landed
 //

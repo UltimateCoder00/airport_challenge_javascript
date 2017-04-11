@@ -1,17 +1,13 @@
-function Airport() {
+function Airport(capacity) {
 
   var defaultCapacity = 10;
 
-  Airport.prototype.planes = function() {
-    return [];
-  }
+  this._planes = []
 
-  Airport.prototype.capacity = function(number) {
-    if (number == null) {
-      return defaultCapacity;
-    } else {
-      return number;
-    }
+  if (capacity == null) {
+    this._capacity = defaultCapacity;
+  } else {
+    this._capacity = capacity;
   }
 
 }

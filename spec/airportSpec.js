@@ -3,19 +3,20 @@ describe("Airport", function() {
 
   beforeEach(function() {
     airport = new Airport();
+    airport20 = new Airport(20);
   })
 
   describe('atributes of airport', function() {
     it('has an emtpy array of planes', function() {
-      expect(airport.planes()).toEqual([]);
+      expect(airport._planes).toEqual([]);
     });
   });
   describe('capacity', function() {
     it('default capacity', function() {
-      expect(airport.capacity()).toEqual(10);
+      expect(airport._capacity).toEqual(10);
     });
     it('specified capacity', function() {
-      expect(airport.capacity(20)).toEqual(20);
+      expect(airport20._capacity).toEqual(20);
     });
   });
 })
