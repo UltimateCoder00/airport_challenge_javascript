@@ -1,3 +1,4 @@
+console.log("required airport spec");
 describe("Airport", function() {
   var airport;
 
@@ -32,19 +33,13 @@ describe("Airport", function() {
       airport.accept(fakePlane);
       expect(fakePlane.land).toHaveBeenCalled();
     });
-  });
 
-  describe('release plane', function() {
-    it('releases plane from store', function() {
-      airport.accept(plane);
-      airport.release(plane);
-      expect(airport._planes).toEqual([]);
+    it('would not accept a plane if capacity is reached', function() {
+      tempAirport = new Airport(1);
+      tempAirport.accept(plane);
+      expect(function() {tempAirport.accept(plane);} ).toThrowError('Airport Full!');
     });
-    it('calls takeoff on plane', function() {
-      airport.accept(fakePlane);
-      airport.release(fakePlane);
-      expect(fakePlane.takeOff).toHaveBeenCalled();
-    });
+
   });
 
 })
