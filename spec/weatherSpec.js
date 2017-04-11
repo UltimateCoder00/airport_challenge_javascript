@@ -1,3 +1,22 @@
+console.log("required weather spec")
+
+describe("Weather", function() {
+
+  var weather;
+
+  beforeEach(function() {
+    weather = new Weather();
+  })
+
+  describe("Stormy value", function() {
+    it("returns a boolean", function() {
+      expect(typeof weather.isSunny()).toEqual('boolean');
+    });
+  });
+
+})
+
+
 // require 'weather'
 //
 // describe Weather do

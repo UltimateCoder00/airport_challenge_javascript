@@ -1,3 +1,5 @@
+console.log("required plane spec")
+
 describe('Plane', function() {
 
   var plane;
